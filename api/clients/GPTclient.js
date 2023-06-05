@@ -12,4 +12,4 @@ async function generateStory(prompts) {
   return res.data.choices[0].message.content
 }
 
-module.exports = generateStory
+module.exports = generateStory;
