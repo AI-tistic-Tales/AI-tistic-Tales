@@ -69,6 +69,8 @@
   
 .react-select__option:hover {
     background-color: #ffa500 !important;
+    border-radius: 5px;
+    padding: 5px;
 }
   
 .react-select__option--is-selected {
