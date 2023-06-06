@@ -13,14 +13,14 @@
     border-radius: 5px;
     padding: 20px;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 22px;
+    font-size: 16px;
     white-space: normal;
     outline: none;
 }
 
 .text-input-label {
     width: 30%;
-    color: rgb(255, 255, 255);
+    color: #efefef;
     font-size: 100%;
     text-align: left;
 }
