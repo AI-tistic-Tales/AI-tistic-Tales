@@ -74,6 +74,8 @@
 }
   
 .react-select__option--is-selected {
-    background-color: #de9100 !important;
-    color: #220505 !important;
+    background-color: #b3b3b3 !important;
+    color: black !important;
+    border-radius: 5px;
+    padding: 5px;
 }

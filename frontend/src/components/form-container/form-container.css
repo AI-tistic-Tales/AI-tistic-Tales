@@ -15,7 +15,6 @@
     flex-direction: column;
     justify-content: center;
     width: 50%;
-    padding-top: 15%;
 }
 
 .formcontainer-title {
@@ -70,4 +69,19 @@
     align-items: center;
     animation: fadeOut 3s linear forwards;
 }
+
+.formcontainer-logo {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+ 
+.formcontainer-block {
+  display: flex;
+  flex-direction: column;
   
+
+}
