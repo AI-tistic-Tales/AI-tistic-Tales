@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Form from '../forms/Form';
 import TextInput from "../text-input-form/TextInput";
 import './form-container.css'
-import logo from './homepageLogo.gif'
+import logo_gif from './homepageLogo.gif'
+import logo from './homepageLogo.png'
 
 const FormContainer = ({ navigate }) => {
   const character = ['Spiderman', 'Rapunzel', 'Darth Vader', 'Wonder Woman', 'Batman', 'Hermione Granger'];
@@ -56,14 +57,15 @@ const FormContainer = ({ navigate }) => {
   return (
       <div className="formcontainer">
         {isAnimationVisible && (
-          <img className="formcontainer-logo-gif" src={logo} alt="test" />
+          <img className="formcontainer-logo-gif" src={logo_gif} alt="test" />
         )}
         {!isAnimationVisible && (
       <div className="formcontainer-container">
+        <img className="formcontainer-logo" src={logo} alt="test" />
         <h1 className="formcontainer-title">
           Get started with some details...
         </h1>
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit} className="formcontainer-block">
           
           <Form
             dropdownItems={character}
