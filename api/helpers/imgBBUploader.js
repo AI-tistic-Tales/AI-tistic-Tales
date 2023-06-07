@@ -11,7 +11,7 @@ async function uploadImage(apiKey, base64Image) {
   });
 
   const data = await response.json();
-  return data;
+  return data.data.url
 }
 
 module.exports = uploadImage

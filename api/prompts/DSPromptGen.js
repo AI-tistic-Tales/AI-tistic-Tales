@@ -72,50 +72,33 @@ const sdPromptBank = {
       },
   },
 }
-
-
-
   
 const DSPromptGen = (userSelection) => {
-const prompts = ["go to the shops"]
-let art_style = ""
-for (let key in userSelection) {
-  console.log(key)
-  if (key == 'style') {
-    if (userSelection[key] == 'Cartoon') {
-      art_style = "comic-book"
-    } else if (userSelection[key] == 'Anime')  {
-        art_style = "anime"
-    } else if (userSelection[key] == 'Realistic')  {
-      art_style = "photographic"
-    } else if (userSelection[key] == 'Pixar') {
-      art_style = "digital-art"
-    } else {
-      art_style = "fantasy-art"
+    // recommend adding const prompts = [userSelection["prompts"]] to get the prompt to beginning of query
+    const prompts = [];
+    let art_style = "";
+    for (let key in userSelection) {
+      if (key == "style") {
+        if (userSelection[key] == "Cartoon") {
+          art_style = "comic-book";
+        } else if (userSelection[key] == "Anime") {
+          art_style = "anime";
+        } else if (userSelection[key] == "Realistic") {
+          art_style = "photographic";
+        } else if (userSelection[key] == "Pixar") {
+          art_style = "digital-art";
+        } else {
+          art_style = "fantasy-art";
+        }
+      } else if (key == "prompt") {
+        prompts.push(userSelection[key]);
+      } else if (key == "character" || key == "genre") {
+        prompts.push(sdPromptBank[key][userSelection[key]]["positivePrompts"]);
+        let negPrompts = sdPromptBank[key][userSelection[key]]["negativePrompts"];
+        prompts.push(negPrompts.join(":-1.0, ") + ":-1.0");
+      }
     }
-  } else if(key == 'prompt') {
-    prompts.push(userSelection[key])
-  } else if (key == 'character' || key == 'genre' || key == 'style') {
-    // console.log("here")
-    prompts.push(sdPromptBank[key][userSelection[key]]['positivePrompts'])
-    let negPrompts = sdPromptBank[key][userSelection[key]]['negativePrompts']
-    prompts.push(negPrompts.join(':-1.0, ') + ':-1.0')
-  }
-}
-// console.log(prompts.flat().join(', '))
-return {prompts: prompts.flat().join(', '), art_style: art_style}
-}
-
-module.exports = DSPromptGen;
-
-// testing script
-
-// console.log(DSPromptGen({
-//   character: 'Spiderman',
-//   genre: 'Fairytale',
-//   style: 'Realistic',
-//   prompt: 'go to the shops',
-//   messageHistory: [],
-//   imageHistory: []
-// }))
-
+    return { prompts: prompts.flat().join(", "), art_style: art_style };
+  };
+  
+  module.exports = DSPromptGen;
