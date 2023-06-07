@@ -82,7 +82,6 @@ for (let key in userSelection) {
     negativePrompts.push(sdPromptBank[key][userSelection[key]]['negativePrompts'])
     }
 }
-// console.log({positivePrompts: positivePrompts.flat().join(', '), negativePrompts: negativePrompts.flat().join(', ')})
 return {positivePrompts: positivePrompts.flat().join(', '), negativePrompts: negativePrompts.flat().join(', ')}
 }
 
