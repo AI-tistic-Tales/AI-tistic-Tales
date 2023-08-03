@@ -106,6 +106,25 @@ Before running the project, ensure that you have installed `npm` and `node` in y
     cd ../frontend
     npm install
     ```
+3. Save your API keys\
+Sign up to ChatGPT and either Stable Diffusion (commit 3c6245686f0a9c9eb39c3dba7fe184e0c757ab69 and previous) or Dream Studio to get your API keys.\
+Stable Diffusion website: https://stablediffusionapi.com/ \
+OpenAI (ChatGPT) website: https://platform.openai.com/ \
+Save these as environment variables on your local machine under the names DS_KEY (Dream Studio) or SD_KEY (Stable Diffusion) and GPT_KEY (ChatGPT).\
+To do this, run the following in the terminal:
+
+    ```bash
+    echo "export SD_KEY=yourstablediffusionAPIkey" >> ~/.zshrc
+    source ~/.zshrc
+    echo "export GPT_KEY=yourchatgptAPIkey" >> ~/.zshrc
+    source ~/.zshrc
+    ```
+If you use bash, replace zshrc with bash_profile.\
+
+Restart the terminal and check that the keys have saved by running:
+```
+cat ~/.zshrc
+```
 ------
 ------
 <!-- INSTALLATION -->
